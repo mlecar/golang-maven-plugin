@@ -1,17 +1,27 @@
-package com.marcelolecar.maven.plugins.marcelolecar_golang_plugin;
+package com.marcelolecar.maven.plugins.golang;
 
 import java.io.File;
 
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugins.annotations.Mojo;
+import org.apache.maven.plugins.annotations.Parameter;
 import org.codehaus.plexus.util.StringUtils;
 import org.codehaus.plexus.util.cli.CommandLineException;
 import org.codehaus.plexus.util.cli.CommandLineUtils;
 import org.codehaus.plexus.util.cli.Commandline;
 
 @Mojo(name = "sayhi")
-public class GreetingsMojo extends AbstractMojo {
+public class BuildGoMojo extends AbstractMojo {
+
+    @Parameter(property = "goPath")
+    private String _goRoot;
+
+    @Parameter(property = "goPath")
+    private String _goPath;
+
+    @Parameter(property = "workingDir")
+    private String _workingDir;
 
     public void execute() throws MojoExecutionException {
         getLog().info("Hello, world.");
@@ -45,7 +55,7 @@ public class GreetingsMojo extends AbstractMojo {
     }
 
     public static void main(String[] args) throws MojoExecutionException {
-        new GreetingsMojo().execute();
+        new BuildGoMojo().execute();
     }
 
 }

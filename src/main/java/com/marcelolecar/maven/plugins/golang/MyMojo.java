@@ -1,4 +1,4 @@
-package com.marcelolecar.maven.plugins.marcelolecar_golang_plugin;
+package com.marcelolecar.maven.plugins.golang;
 
 /*
  * Copyright 2001-2005 The Apache Software Foundation.
